@@ -7,16 +7,12 @@ import { productsCoreType } from "~/types/Product";
 // }
 
 const Products = () => {
-    const [products,setProducts] = useState([])
-    console.log(products);
-    
+    const [products,setProducts] = useState([])    
     useEffect(()=>{
         fetch(`http://localhost:3000/products`)
         .then((response) => response.json())
         .then((data) =>{
             setProducts(data)
-            console.log(data);
-            
         })
     },[])
 
