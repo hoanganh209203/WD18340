@@ -29,9 +29,6 @@ export type userType = {
     crypto: cryptoType
   
   }
-  
- 
-  
   type hair = {
     color: string,
     type: string,
