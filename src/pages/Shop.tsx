@@ -1,10 +1,13 @@
 import React from 'react'
+import Products from '~/components/productsList'
 
 type Props = {}
 
 const Shop = (props: Props) => {
   return (
-    <div>Shop</div>
+    <>
+    <Products/>
+    </>
   )
 }
 
