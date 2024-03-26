@@ -11,6 +11,7 @@ import Layout from './layouts/Layout'
 import AdminPage from './layouts/AdminPage'
 import ListProducts from './components/Admin_Layout/Products/ListProducts'
 import Dashboard from './pages/Admins/Dashboard'
+import AddProduct from './components/Admin_Layout/Products/AddProduct'
 
 function App() {
 
@@ -30,8 +31,7 @@ function App() {
       <Route path='admin' element={<AdminPage/>}>
       <Route index element={<Dashboard/>}/>
       <Route path='listpro' element={<ListProducts/>}/>
-      <Route path="**" element={<NotFound />} />
-
+      <Route path='listpro/add' element={<AddProduct/>}/>
       </Route>
     </Routes>
 
