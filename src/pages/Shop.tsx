@@ -1,5 +1,5 @@
 import React from 'react'
-import Products from '~/components/productsList'
+import Products from '~/components/View_Layout/productsList'
 
 type Props = {}
 

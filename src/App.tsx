@@ -8,6 +8,9 @@ import Register from './layouts/Users/Register'
 import NotFound from './components/NotFound'
 import DetailProduct from './pages/DetailProduct'
 import Layout from './layouts/Layout'
+import AdminPage from './layouts/AdminPage'
+import ListProducts from './components/Admin_Layout/Products/ListProducts'
+import Dashboard from './pages/Admins/Dashboard'
 
 function App() {
 
@@ -24,7 +27,12 @@ function App() {
         <Route path='register' element={<Register />} />
         <Route path="*" element={<NotFound />} />
       </Route>
+      <Route path='admin' element={<AdminPage/>}>
+      <Route index element={<Dashboard/>}/>
+      <Route path='listpro' element={<ListProducts/>}/>
+      <Route path="**" element={<NotFound />} />
 
+      </Route>
     </Routes>
 
   )

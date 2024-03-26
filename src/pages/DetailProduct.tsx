@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { productsCoreType } from '~/types/Product';
-
 type Props = {}
 
 const DetailProduct = (props: Props) => {

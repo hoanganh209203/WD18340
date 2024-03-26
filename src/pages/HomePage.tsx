@@ -1,8 +1,8 @@
 import React from 'react'
-import SlideShow from '../components/SlideShow'
-import Products from '~/components/productsList'
-import Header from '~/components/Header'
-import Footer from '~/components/Footer'
+import SlideShow from '../components/View_Layout/SlideShow'
+import Products from '~/components/View_Layout/productsList'
+import Header from '~/components/View_Layout/Header'
+import Footer from '~/components/View_Layout/Footer'
 
 const HomePage = () => {
     
