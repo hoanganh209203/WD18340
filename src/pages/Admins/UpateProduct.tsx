@@ -19,7 +19,6 @@ const UpateProduct = (props: Props) => {
         setCategory(response.data)
         console.log(response.data);
       })
-      
     },[]);
     const [editForm, setEditForm] = useState<FormProduct>({
         title: '',
@@ -93,7 +92,7 @@ const UpateProduct = (props: Props) => {
             }
             console.log(value);
 
-            axios.put(`http://localhost:3000/products/${id}`, value)
+            axios.put(`http://localhost:5000/products/${id}`, value)
                 .then(() => {
                     navigate("/admin/listpro")
                 })

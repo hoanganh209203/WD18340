@@ -36,8 +36,6 @@ function App() {
       <Route path='listpro/add' element={<AddProduct/>}/>
       <Route path='listpro/edit/:id' element={<UpateProduct/>}/>
       <Route path='listcate' element={<ListCategory/>}/>
-
-
       </Route>
     </Routes>
 
