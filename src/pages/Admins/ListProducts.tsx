@@ -1,7 +1,8 @@
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { productsCoreType } from '~/types/Product'
-
+import { Popconfirm } from "antd";
 type Props = {}
 
 const ListProducts = (props: Props) => {
@@ -14,6 +15,13 @@ const ListProducts = (props: Props) => {
         setProducts(data)
       })
   }, [page])
+
+  const deleteProduct = (id:number) =>{
+    console.log(id);
+    axios.delete(`http://localhost:3000/products/${id}`)
+    const filterProduct = poducts.filter((product) => product.id !== id)
+    setProducts(filterProduct)
+  }
 
   return (
 
@@ -79,7 +87,29 @@ const ListProducts = (props: Props) => {
                 {item.rating}
               </td>
               <td className="px-6 py-4">
-                <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+              <NavLink to={`edit/${item.id}`}>
+                  <button
+                    type="button"
+                    className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900"
+                  >
+                    Edit
+                  </button>
+                </NavLink>
+                <Popconfirm
+                  title="Delete the task"
+                  description="Are you sure to delete this task?"
+                  onConfirm={() => deleteProduct(item.id)}
+                  okText="Yes"
+                  cancelText="No"
+                  okType={"danger"}
+                >
+                  <button
+                    type="button"
+                    className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                  >
+                    Delete
+                  </button>
+                </Popconfirm>
               </td>
             </tr>
           ))}

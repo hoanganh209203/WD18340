@@ -38,19 +38,21 @@
       ]
     },
     {
-      "id": "3",
-      "title": "Samsung Universe 9",
+      "title": "Samsung Universe 9X10",
       "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-      "price": 1249,
+      "price": 1000000,
       "discountPercentage": 15.46,
       "rating": 4.09,
-      "stock": 36,
+      "stock": 199,
       "brand": "Samsung",
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
       "images": [
-        "https://cdn.dummyjson.com/product-images/3/1.jpg"
-      ]
+        "https://cdn.dummyjson.com/product-images/3/1.jpg",
+        "https://vnn-imgs-a1.vgcloud.vn/icdn.dantri.com.vn/2021/05/08/kimoanh-851-1620472406599.jpeg",
+        "https://gcs.tripi.vn/public-tripi/tripi-feed/img/474015QSt/anh-gai-xinh-1.jpg"
+      ],
+      "id": "3"
     },
     {
       "id": "4",
@@ -551,32 +553,6 @@
         "https://cdn.dummyjson.com/product-images/30/3.jpg",
         "https://cdn.dummyjson.com/product-images/30/thumbnail.jpg"
       ]
-    },
-    {
-      "title": "Ut non neque quaerat",
-      "description": "Corporis omnis ea im",
-      "price": "120",
-      "discountPercentage": "14",
-      "rating": "7",
-      "stock": "32",
-      "brand": "Error vero aliquid c",
-      "category": "Doloribus illum sit",
-      "thumbnail": "https://timnhadat.s3-ap-southeast-1.amazonaws.com/images/raovat/2022/08/16/133051071467768150-24.jpg",
-      "images": [],
-      "id": "OKqdz51"
-    },
-    {
-      "title": "Vero laboris lorem n",
-      "description": "Ipsum blanditiis do",
-      "price": "628",
-      "discountPercentage": "55",
-      "rating": "54",
-      "stock": "5",
-      "brand": "Molestiae sunt dolor",
-      "category": "Non amet nulla volu",
-      "thumbnail": "https://timnhadat.s3-ap-southeast-1.amazonaws.com/images/raovat/2022/08/16/133051071467768150-24.jpg",
-      "images": [],
-      "id": "yxjcgOY"
     },
     {
       "title": "Aut veniam modi del",

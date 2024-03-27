@@ -11,7 +11,7 @@ const ProductItem = (props: Props) => {
     <div className="group relative" key={props.product.id}>
                             <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                                 <NavLink to={`detail/${props.product.id}`}>
-                                    <img src={props.product.thumbnail} alt="Front of men&#039;s Basic Tee in black." className="h-full w-full object-cover object-center lg:h-full lg:w-full" />
+                                    <img src={props.product.thumbnail} alt="Front of men&#039;s Basic Tee in black." className="h-full w-full object-cover object-center lg:h-full lg:w-full rounded-xl" />
                                 </NavLink>
 
                             </div><div className="mt-4 flex justify-between">

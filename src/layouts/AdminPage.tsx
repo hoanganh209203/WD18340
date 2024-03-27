@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import HaederAdmin from '~/components/Admin_Layout/HaederAdmin'
+import HaederAdmin from '~/pages/Admins/HaederAdmin'
 type Props = {}
 
 const AdminPage = (props: Props) => {

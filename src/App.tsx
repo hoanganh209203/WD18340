@@ -9,9 +9,10 @@ import NotFound from './components/NotFound'
 import DetailProduct from './pages/DetailProduct'
 import Layout from './layouts/Layout'
 import AdminPage from './layouts/AdminPage'
-import ListProducts from './components/Admin_Layout/Products/ListProducts'
+import ListProducts from './pages/Admins/ListProducts'
 import Dashboard from './pages/Admins/Dashboard'
-import AddProduct from './components/Admin_Layout/Products/AddProduct'
+import AddProduct from './pages/Admins/AddProduct'
+import UpateProduct from './pages/Admins/UpateProduct'
 
 function App() {
 
@@ -20,8 +21,8 @@ function App() {
     <Routes>
       
       <Route path='/' element={<Layout />}>
-        <Route path='' element={<HomePage />} />
-        <Route path='shop' element={<Shop />} />
+        <Route index element={<HomePage />} />
+        <Route path='shop/' element={<Shop />} />
         <Route path='detail/:id' element={<DetailProduct />} />
         <Route path='about' element={<About />} />
         <Route path='login' element={<Login />} />
@@ -32,6 +33,9 @@ function App() {
       <Route index element={<Dashboard/>}/>
       <Route path='listpro' element={<ListProducts/>}/>
       <Route path='listpro/add' element={<AddProduct/>}/>
+      <Route path='listpro/edit/:id' element={<UpateProduct/>}/>
+
+
       </Route>
     </Routes>
 
