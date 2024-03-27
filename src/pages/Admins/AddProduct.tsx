@@ -84,7 +84,7 @@ const AddProduct = () => {
     <div className="max-w-md mx-auto bg-white rounded-lg overflow-hidden md:max-w-full">
       <div className="p-16">
         <div className="w-full px-4 py-6">
-          <h1 className="text-5xl font-semibold text-gray-800 mb-2">Thêm Sản phẩm mới</h1>
+          <h1 className="text-3xl font-bold text-gray-800 mb-5 text-center">Add Product</h1>
           <form onSubmit={onSubmit} method="POST" className="space-y-4">
             <div>
               <label htmlFor="title" className="block text-sm font-medium text-gray-700">Tiêu đề</label>

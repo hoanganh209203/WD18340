@@ -64,8 +64,8 @@ const ListProducts = (props: Props) => {
               <td className="px-6 py-4">
                 {index+1}
               </td>
-              <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                <img style={{ height: '150px' }} src={item.thumbnail} alt="" />
+              <th scope="row" className="font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <img style={{ height: '150px',width:'100%' }} src={item.thumbnail} alt="" />
               </th>
               <td className="px-6 py-4">
                 {item.title}

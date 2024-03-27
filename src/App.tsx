@@ -28,8 +28,8 @@ function App() {
         <Route path='about' element={<About />} />
         <Route path='login' element={<Login />} />
         <Route path='register' element={<Register />} />
-        <Route path="*" element={<NotFound />} />
       </Route>
+        <Route path="*" element={<NotFound />} />
       <Route path='admin' element={<AdminPage/>}>
       <Route index element={<Dashboard/>}/>
       <Route path='listpro' element={<ListProducts/>}/>

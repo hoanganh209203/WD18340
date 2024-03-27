@@ -8,31 +8,35 @@ type Props = {
 
 const ProductItem = (props: Props) => {
     return (
-        <div className="group relative" key={props.product._id}>
-            <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                <NavLink to={`detail/${props.product._id}`}>
-                    <img src={props.product.thumbnail} alt="Front of men&#039;s Basic Tee in black." className="h-full w-full object-cover object-center lg:h-full lg:w-full rounded-xl" />
-                </NavLink>
+      <div key={props.product._id}
+       className="bg-white shadow-[0_2px_15px_-6px_rgba(0,0,0,0.2)] w-full py-6 max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
+ <NavLink to={`detail/${props.product._id}`}>
+  <div className="flex items-center gap-2 px-3">
+  <h3 className="text-xl text-[#333] font-extrabold flex-1">{props.product.title}</h3>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20px" className="cursor-pointer fill-[#333] shrink-0" viewBox="0 0 64 64">
+    <path d="M45.5 4A18.53 18.53 0 0 0 32 9.86 18.5 18.5 0 0 0 0 22.5C0 40.92 29.71 59 31 59.71a2 2 0 0 0 2.06 0C34.29 59 64 40.92 64 22.5A18.52 18.52 0 0 0 45.5 4ZM32 55.64C26.83 52.34 4 36.92 4 22.5a14.5 14.5 0 0 1 26.36-8.33 2 2 0 0 0 3.27 0A14.5 14.5 0 0 1 60 22.5c0 14.41-22.83 29.83-28 33.14Z" data-original="#000000" />
+  </svg>
+</div>
+ </NavLink>
 
-            </div><div className="mt-4 flex justify-between">
-                <NavLink to={`detail/${props.product._id}`}>
+  <NavLink to={`detail/${props.product._id}`}>
+  <img src={props.product.thumbnail} className="h-72 w-full lg:w-full rounded-xl" />
+  </NavLink>
+  <div className="px-6">
+  <NavLink to={`detail/${props.product._id}`}>
+    
+    <div className="mt-10 flex items-center flex-wrap gap-4">
+      <h3 className="text-xl text-[#333] font-bold flex-1">${props.product.price}</h3>
+      <button type="button"
+       className="px-6 py-2.5 rounded text-[#333] text-sm tracking-wider font-semibold border-2 border-[#333] hover:bg-gray-50 outline-none">
+        Order now
+        </button>
+    </div>
+    </NavLink>
+  </div>
+</div>
 
 
-                    <h2 className="text-2xl font-bold tracking-tight text-gray-900">{props.product.title}</h2>
-                </NavLink>
-
-                <div>
-                    <h3 className="text-sm text-gray-700">
-                        <NavLink to={`detail/${props.product._id}`}>
-                            <span aria-hidden="true" className="absolute inset-0"></span>
-                            {props.product.category?.name}
-                        </NavLink>
-                    </h3>
-                    <p className="mt-1 text-sm text-gray-500">{props.product.discountPercentage}</p>
-                </div>
-                <p className="text-sm font-medium text-gray-900">{props.product.price}</p>
-            </div>
-        </div>
     )
 }
 
