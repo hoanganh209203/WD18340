@@ -9,17 +9,16 @@ const ListProducts = (props: Props) => {
   const [poducts, setProducts] = useState<productsCoreType[]>([])
   const [page, setPage] = useState(1)
   useEffect(() => {
-    fetch(`http://localhost:3000/products?_page=${page}&_limit=5`)
-      .then(response => response.json())
-      .then((data) => {
-        setProducts(data)
+    axios.get(`http://localhost:5000/products`)
+      .then((response) =>{
+        setProducts(response.data)
       })
-  }, [page])
+  }, [])
 
-  const deleteProduct = (id:number) =>{
+  const deleteProduct = (id:string) =>{
     console.log(id);
-    axios.delete(`http://localhost:3000/products/${id}`)
-    const filterProduct = poducts.filter((product) => product.id !== id)
+    axios.delete(`http://localhost:5000/products/${id}`)
+    const filterProduct = poducts.filter((product) => product._id !== id)
     setProducts(filterProduct)
   }
 
@@ -30,7 +29,7 @@ const ListProducts = (props: Props) => {
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th scope="col" className="px-3 py-3">
-              ID
+             STT
             </th>
             <th scope="col" className="px-6 py-3">
               Image
@@ -59,11 +58,11 @@ const ListProducts = (props: Props) => {
           </tr>
         </thead>
         <tbody>
-          {poducts.map((item) => (
+          {poducts.map((item, index) => (
 
             <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
               <td className="px-6 py-4">
-                {item.id}
+                {index+1}
               </td>
               <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 <img style={{ height: '150px' }} src={item.thumbnail} alt="" />
@@ -75,7 +74,7 @@ const ListProducts = (props: Props) => {
                 {item.price}
               </td>
               <td className="px-6 py-4">
-                {item.category}
+                {item.category?.name}
               </td>
               <td className="px-6 py-4">
                 {item.description}
@@ -87,7 +86,7 @@ const ListProducts = (props: Props) => {
                 {item.rating}
               </td>
               <td className="px-6 py-4">
-              <NavLink to={`edit/${item.id}`}>
+              <NavLink to={`edit/${item._id}`}>
                   <button
                     type="button"
                     className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900"
@@ -98,7 +97,7 @@ const ListProducts = (props: Props) => {
                 <Popconfirm
                   title="Delete the task"
                   description="Are you sure to delete this task?"
-                  onConfirm={() => deleteProduct(item.id)}
+                  onConfirm={() => deleteProduct(item._id)}
                   okText="Yes"
                   cancelText="No"
                   okType={"danger"}
@@ -116,10 +115,10 @@ const ListProducts = (props: Props) => {
 
         </tbody>
       </table>
-      <div className="mt-10 text-center flex justify-between items-center ml-72 mr-72">
+      {/* <div className="mt-10 text-center flex justify-between items-center ml-72 mr-72">
       <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded' onClick={() => { setPage(page - 1) }}>Previous Page</button>
       <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded' onClick={() => { setPage(page + 1) }}>Next Page</button>
-      </div>
+      </div> */}
 
     </div>
 

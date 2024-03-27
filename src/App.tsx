@@ -13,6 +13,7 @@ import ListProducts from './pages/Admins/ListProducts'
 import Dashboard from './pages/Admins/Dashboard'
 import AddProduct from './pages/Admins/AddProduct'
 import UpateProduct from './pages/Admins/UpateProduct'
+import ListCategory from './pages/Admins/ListCategory'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
       <Route path='listpro' element={<ListProducts/>}/>
       <Route path='listpro/add' element={<AddProduct/>}/>
       <Route path='listpro/edit/:id' element={<UpateProduct/>}/>
+      <Route path='listcate' element={<ListCategory/>}/>
 
 
       </Route>

@@ -23,7 +23,7 @@ const ProductSchema = Joi.object<FormProduct>({
     brand:Joi.string().required().messages({
         "string.empty": "Please fill in the title field."
     }),
-    category:Joi.string().required(),
+    category:Joi.string().required().optional(),
     thumbnail:Joi.string().required().messages({
         "string.empty": "Please fill in the title field."
     }),

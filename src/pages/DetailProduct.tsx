@@ -7,7 +7,7 @@ const DetailProduct = (props: Props) => {
     const {id} = useParams();
   const [product, setProduct] = useState<productsCoreType>();
   useEffect(() => {
-    fetch(`http://localhost:3000/products/${id}`)
+    fetch(`http://localhost:5000/products/${id}`)
       .then(response => response.json())
       .then(data => {
         setProduct(data)
@@ -79,7 +79,7 @@ const DetailProduct = (props: Props) => {
                     </div>
                   </div>
                   <div className="w-[1px] h-4 bg-black/50"></div>
-                  <span className="text-green-400">{product?.category}</span>
+                  <span className="text-green-400">{product?.category?.name}</span>
                 </div>
                 <div className="text-2xl mb-6">
                   <span>{product?.price}</span>
@@ -89,7 +89,7 @@ const DetailProduct = (props: Props) => {
                   >{product?.description}</span>
                 </div>
               </div>
-              <div className="flex items-center justify-between mt-8">
+              <div className="flex items-center justify-between mt-8 gap-5">
                 <div className="flex items-center">
                   <button
                     className="w-10 h-11 border border-black/50 rounded-l-[4px]"

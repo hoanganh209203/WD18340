@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { productType } from "~/types/Cart";
 import { productsCoreType } from "~/types/Product";
 import ProductItem from "./ProductItem";
 
@@ -10,9 +9,9 @@ import ProductItem from "./ProductItem";
 
 const Products = () => {
     const [products, setProducts] = useState([])
-    const [page, setPage] = useState(1)
+    // const [page, setPage] = useState(1)
     useEffect(() => {
-        const url = `http://localhost:3000/products?_page=${page}&_limit=10`
+        const url = `http://localhost:5000/products`
         console.log(url);
         fetch(url)
             .then((response) => response.json())
@@ -20,7 +19,7 @@ const Products = () => {
                 console.log(data);
                 setProducts(data)
             })
-    }, [page])
+    }, [])
     return (
         <div className="bg-white">
             <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
@@ -30,11 +29,11 @@ const Products = () => {
                         <ProductItem product={product} />
                     ))}
                 </div>
-                <div className="mt-16 text-center">
+                {/* <div className="mt-16 text-center">
                     <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={() => { setPage(page - 1) }}>Prev Page</button>
                     <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={() => { setPage(page + 1) }}>Next Page</button>
 
-                </div>
+                </div> */}
             </div>
         </div>
 

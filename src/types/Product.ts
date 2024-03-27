@@ -1,5 +1,5 @@
 export type productsCoreType = {
-    id: number,
+    _id: string,
     title: string,
     description?: string,
     price: number,
@@ -7,7 +7,10 @@ export type productsCoreType = {
     rating?: number,
     stock?: number,
     brand?: string,
-    category?: string,
+    category?:{
+        _id: string,
+        name: string
+    },
     thumbnail?: string,
     images?: string[]
 }

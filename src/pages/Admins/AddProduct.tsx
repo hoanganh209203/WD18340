@@ -1,12 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ErrorFormProduct } from '~/types/ErrorForm'
 import { FormProduct } from '~/types/FormProduct'
 import productValidate from '~/validations/products'
 import axios from 'axios'
+import { CategoryType } from '~/types/Cart'
 
 const AddProduct = () => {
   const navgate = useNavigate()
+  const [category , setCategory] = useState<CategoryType[]>([])
+  useEffect(()=>{
+    axios.get(`http://localhost:5000/category`)
+    .then((response) =>{
+      setCategory(response.data)
+      console.log(response.data);
+    })
+    
+  },[]);
+
   const [addForm, setAddForm] = useState<FormProduct>({
     title: '',
     description: '',
@@ -15,10 +26,12 @@ const AddProduct = () => {
     rating: 0,
     stock: 0,
     brand: '',
-    category: '',
+    category:'',
     thumbnail: '',
     images: []
   })
+  console.log(addForm);
+  
   const [errorForm, setErrorForm] = useState<ErrorFormProduct>({})
 
   const handlChange = (
@@ -57,7 +70,7 @@ const AddProduct = () => {
       return;
     }
 
-    axios.post('http://localhost:3000/products', addForm)
+    axios.post('http://localhost:5000/products', addForm)
       .then(() => {
         alert("Created product successfully");
         navgate("/admin/listpro");
@@ -65,6 +78,7 @@ const AddProduct = () => {
         console.log(error);
       })
   };
+
 
   return (
     <div className="max-w-md mx-auto bg-white rounded-lg overflow-hidden md:max-w-full">
@@ -138,9 +152,16 @@ const AddProduct = () => {
             </div>
             <div>
               <label htmlFor="category" className="block text-sm font-medium text-gray-700">Danh mục</label>
-              <input
-                onChange={handlChange} type="text" name="category" id="category"
-                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full h-12 shadow-sm sm:text-xl border-gray-300 rounded-md" />
+              <select
+            onChange={handlChange}
+            name="category"
+            className="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            id=""
+          >
+            {category.map((cate)=>(
+              <option key={cate._id} value={cate._id}>{cate.name}</option>
+            ))}
+          </select>
               {errorForm?.category && (
                 <span className="text-sm text-red-400">* {errorForm.category}</span>
               )}

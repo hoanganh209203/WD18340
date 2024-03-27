@@ -1,6 +1,8 @@
 import axios from 'axios';
+import { object } from 'joi';
 import React, { useEffect, useState } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
+import { CategoryType } from '~/types/Cart';
 import { ErrorFormProduct } from '~/types/ErrorForm';
 import { FormProduct } from '~/types/FormProduct'
 import productValidate from '~/validations/products';
@@ -10,6 +12,15 @@ type Props = {}
 const UpateProduct = (props: Props) => {
     const { id } = useParams()
     const navigate = useNavigate()
+    const [category , setCategory] = useState<CategoryType[]>()
+    useEffect(()=>{
+      axios.get(`http://localhost:5000/category`)
+      .then((response) =>{
+        setCategory(response.data)
+        console.log(response.data);
+      })
+      
+    },[]);
     const [editForm, setEditForm] = useState<FormProduct>({
         title: '',
         description: '',
@@ -18,7 +29,7 @@ const UpateProduct = (props: Props) => {
         rating: 0,
         stock: 0,
         brand: '',
-        category: '',
+        category:'',
         thumbnail: '',
         images: []
     })
@@ -26,8 +37,8 @@ const UpateProduct = (props: Props) => {
 
     useEffect(() => {
         if (id) {
-            const idProduct = Number(id)
-            axios.get(`http://localhost:3000/products/${idProduct}`)
+            const idProduct = String(id)
+            axios.get(`http://localhost:5000/products/${idProduct}`)
                 .then((response) => {
                     const product = response.data
                     setEditForm({
@@ -170,10 +181,16 @@ const UpateProduct = (props: Props) => {
               </div>
               <div>
                 <label htmlFor="category" className="block text-sm font-medium text-gray-700">Danh mục</label>
-                <input
-                value={editForm.category}
-                  onChange={handlChange} type="text" name="category" id="category"
-                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full h-12 shadow-sm sm:text-xl border-gray-300 rounded-md" />
+                <select
+            onChange={handlChange}
+            name="category"
+            className="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            id=""
+          >
+             {category?.map((cate)=>(
+              <option key={cate._id} value={cate._id}>{cate.name}</option>
+            ))}
+          </select>
                 {errorForm?.category && (
                   <span className="text-sm text-red-400">* {errorForm.category}</span>
                 )}
@@ -202,7 +219,7 @@ const UpateProduct = (props: Props) => {
                 )}
               </div>
               <div className="flex justify-end">
-                <button type="submit" className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">Thêm sản phẩm</button>
+                <button type="submit" className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">Sửa sản phẩm</button>
               </div>
             </form>
           </div>
