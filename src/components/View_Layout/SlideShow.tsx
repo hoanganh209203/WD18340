@@ -34,16 +34,21 @@ type Props = {}
 
 const SlideShow = (props: Props) => {
   return (
-    <div className="relative font-[sans-serif] before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-50 before:z-10">
-  <img src="https://readymadeui.com/cardImg.webp" alt="Banner Image" className="absolute inset-0 w-full h-full object-cover" />
-  <div className="min-h-[300px] relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-white p-6">
-    <h2 className="sm:text-4xl text-2xl font-bold mb-6">Explore the World</h2>
-    <p className="text-lg text-center text-gray-200">Embark on unforgettable journeys. Book your dream vacation today!</p>
-    <a href="javascript:void(0)" className="mt-8 bg-transparent text-white text-base font-semibold py-2.5 px-6 border-2 border-white rounded hover:bg-white hover:text-black transition duration-300 ease-in-out">
-      Book Now
-    </a>
+   <div className="bg-gray-50 text-[#333] w-full rounded font-[sans-serif] overflow-hidden">
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 items-center">
+    <div className="lg:col-span-2 py-10 px-6">
+      <h1 className="text-3xl font-bold">Master the Art of Programming and Unlock Possibilities!</h1>
+      <p className="mt-4 text-sm text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nunc
+        et
+        tempus blandit, metus mi consectetur nibh, a pharetra felis turpis vitae ligula. Etiam laoreet velit nec neque
+        ultrices, non consequat mauris tincidunt.</p>
+      <button type="button" className="px-6 py-3 mt-10 rounded text-white text-sm tracking-wider font-semibold border-none outline-none bg-blue-600 hover:bg-blue-700">Get
+        the Free Guide</button>
+    </div>
+    <img src="https://im.uniqlo.com/global-cms/spa/resae01763d908ee9f850be71a2ce13d575fr.jpg" className="w-full h-full object-cover shrink-0" />
   </div>
 </div>
+
 
   )
 }

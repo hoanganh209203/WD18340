@@ -10,10 +10,9 @@ const AddProduct = () => {
   const navgate = useNavigate()
   const [category , setCategory] = useState<CategoryType[]>([])
   useEffect(()=>{
-    axios.get(`http://localhost:5000/category`)
+    axios.get(`https://nodejs-fe.vercel.app/category`)
     .then((response) =>{
       setCategory(response.data)
-      console.log(response.data);
     })
     
   },[]);
@@ -56,9 +55,6 @@ const AddProduct = () => {
         [name]: value
       })
     }
-
-
-
   }
   const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
 
@@ -70,7 +66,7 @@ const AddProduct = () => {
       return;
     }
 
-    axios.post('http://localhost:5000/products', addForm)
+    axios.post('https://nodejs-fe.vercel.app/products', addForm)
       .then(() => {
         alert("Created product successfully");
         navgate("/admin/listpro");

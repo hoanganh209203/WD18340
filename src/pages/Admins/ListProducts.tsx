@@ -1,24 +1,17 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import {NavLink } from 'react-router-dom'
 import { productsCoreType } from '~/types/Product'
 import { Popconfirm } from "antd";
-type Props = {}
-
-const ListProducts = (props: Props) => {
-  const [poducts, setProducts] = useState<productsCoreType[]>([])
-  const [page, setPage] = useState(1)
-  useEffect(() => {
-    axios.get(`http://localhost:5000/products`)
-      .then((response) =>{
-        setProducts(response.data)
-      })
-  }, [])
-
+import { useState } from 'react';
+type Props = {
+  products:productsCoreType[]
+}
+const ListProducts = ({products}: Props) => {
+  const [product, setProducts] = useState<productsCoreType[]>([])
   const deleteProduct = (id:string) =>{
     console.log(id);
-    axios.delete(`http://localhost:5000/products/${id}`)
-    const filterProduct = poducts.filter((product) => product._id !== id)
+    axios.delete(`https://nodejs-fe.vercel.app/products/${id}`)
+    const filterProduct = product.filter((product) => product._id !== id)
     setProducts(filterProduct)
   }
 
@@ -58,9 +51,9 @@ const ListProducts = (props: Props) => {
           </tr>
         </thead>
         <tbody>
-          {poducts.map((item, index) => (
+          {products.map((item, index) => (
 
-            <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+            <tr key={item._id} className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
               <td className="px-6 py-4">
                 {index+1}
               </td>

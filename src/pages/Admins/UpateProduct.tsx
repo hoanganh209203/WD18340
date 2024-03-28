@@ -14,7 +14,7 @@ const UpateProduct = (props: Props) => {
     const navigate = useNavigate()
     const [category , setCategory] = useState<CategoryType[]>()
     useEffect(()=>{
-      axios.get(`http://localhost:5000/category`)
+      axios.get(`https://nodejs-fe.vercel.app/category`)
       .then((response) =>{
         setCategory(response.data)
         console.log(response.data);
@@ -37,7 +37,7 @@ const UpateProduct = (props: Props) => {
     useEffect(() => {
         if (id) {
             const idProduct = String(id)
-            axios.get(`http://localhost:5000/products/${idProduct}`)
+            axios.get(`https://nodejs-fe.vercel.app/products/${idProduct}`)
                 .then((response) => {
                     const product = response.data
                     setEditForm({
@@ -92,7 +92,7 @@ const UpateProduct = (props: Props) => {
             }
             console.log(value);
 
-            axios.put(`http://localhost:5000/products/${id}`, value)
+            axios.put(`https://nodejs-fe.vercel.app/products/${id}`, value)
                 .then(() => {
                     navigate("/admin/listpro")
                 })

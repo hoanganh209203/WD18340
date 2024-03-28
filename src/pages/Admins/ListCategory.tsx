@@ -8,7 +8,7 @@ type Props = {}
 const ListCategory = (props: Props) => {
     const [category , setCategory] = useState<CategoryType[]>()
     useEffect(()=>{
-      axios.get(`http://localhost:5000/category`)
+      axios.get(`https://nodejs-fe.vercel.app/category`)
       .then((response) =>{
         setCategory(response.data)
         console.log(response.data);

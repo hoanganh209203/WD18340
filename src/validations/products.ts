@@ -14,7 +14,7 @@ const ProductSchema = Joi.object<FormProduct>({
     discountPercentage:Joi.number().required().messages({
         "number.base": "Please fill in the title field."
     }),
-    rating:Joi.number().required().messages({
+    rating:Joi.number().required().min(1).max(5).messages({
         "number.base": "Please fill in the title field." 
     }),
     stock:Joi.number().required().messages({
