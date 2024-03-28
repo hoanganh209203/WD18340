@@ -1,8 +1,7 @@
-import React from 'react'
 
-type Props = {}
 
-const Register = (props: Props) => {
+
+const Register = () => {
   return (
    <div className="max-w-4xl mx-auto font-[sans-serif] text-[#333] p-6">
   <div className="text-center mb-16">

@@ -1,8 +1,5 @@
-import React from 'react'
 
-type Props = {}
-
-const Login = (props: Props) => {
+const Login = () => {
   return (
    <div className="bg-gray-50 font-[sans-serif] text-[#333]">
   <div className="min-h-screen flex flex-col items-center justify-center py-6 px-4">

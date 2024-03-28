@@ -1,9 +1,8 @@
-import React from 'react'
 import { Outlet } from 'react-router-dom'
 import HaederAdmin from '~/pages/Admins/HaederAdmin'
-type Props = {}
 
-const AdminPage = (props: Props) => {
+
+const AdminPage = () => {
   return (
     <>
    <div className="m-0 font-sans min-h-screen absolute w-full text-base antialiased font-normal leading-default bg-gray-200 text-gray-500">

@@ -1,9 +1,8 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { IoHomeSharp } from "react-icons/io5";
-type Props = {}
 
-const HaederAdmin = (props: Props) => {
+
+const HaederAdmin = () => {
   return (
 <nav className="bg-white border-gray-200 dark:bg-gray-900">
   <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
