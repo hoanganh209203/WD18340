@@ -1,5 +1,4 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { RiAdminFill } from "react-icons/ri";
 const Header = () => {
   return (

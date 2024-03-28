@@ -1,8 +1,6 @@
-import React from 'react'
 
-type Props = {}
 
-const NotFound = (props: Props) => {
+const NotFound = () => {
   return (
     <>
     <div className="text-center">
