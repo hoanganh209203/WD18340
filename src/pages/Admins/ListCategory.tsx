@@ -1,11 +1,9 @@
-import { Table } from 'antd';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import { CategoryType } from '~/types/Cart';
 
-type Props = {}
 
-const ListCategory = (props: Props) => {
+const ListCategory = () => {
     const [category , setCategory] = useState<CategoryType[]>()
     useEffect(()=>{
       axios.get(`https://nodejs-fe.vercel.app/category`)

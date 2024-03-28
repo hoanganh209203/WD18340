@@ -1,38 +1,6 @@
-// import React from 'react';
-// import { Carousel } from 'antd';
 
-// const contentStyle: React.CSSProperties = {
-//   height: '400px',
-//   color: '#fff',
-//   lineHeight: '200px',
-//   textAlign: 'center',
-//   background: '#364d79',
-// };
 
-// const SlideShow: React.FC = () => (
-//   <Carousel autoplay>
-//     <div>
-//       <h3 style={contentStyle}><img className='w-full h-full' src="https://ik.imagekit.io/tvlk/blog/2023/07/canh-dep-thien-nhien-Viet-Nam-11-1024x576.jpg" alt="" /></h3>
-//     </div>
-//     <div>
-//       <h3 style={contentStyle}><img className='w-full h-full' src="https://images.vietnamtourism.gov.vn/vn//images/2022/thang_9/tamcocc.jpg" alt="" /></h3>
-//     </div>
-//     <div>
-//       <h3 style={contentStyle}><img className='w-full h-full' src="https://pantravel.vn/wp-content/uploads/2023/11/ruong-bac-thang-kiet-tac-thien-nhien-vi-dai-tu-ban-tay-con-nguoi.jpg" alt="" /></h3>
-//     </div>
-//     <div>
-//       <h3 style={contentStyle}><img className='w-full h-full' src="https://img.pikbest.com/origin/09/41/85/916pIkbEsTzRC.jpg!w700wp" alt="" /></h3>
-//     </div>
-//   </Carousel>
-// );
-
-// export default SlideShow;
-
-import React from 'react'
-
-type Props = {}
-
-const SlideShow = (props: Props) => {
+const SlideShow = () => {
   return (
    <div className="bg-gray-50 text-[#333] w-full rounded font-[sans-serif] overflow-hidden">
   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 items-center">

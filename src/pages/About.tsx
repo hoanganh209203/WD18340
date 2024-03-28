@@ -1,8 +1,6 @@
-import React from 'react'
 
-type Props = {}
 
-const About = (props: Props) => {
+const About = () => {
   return (
 <div className="bg-gray-100 md:px-10 px-4 py-12 font-[sans-serif]">
   <div className="max-md:max-w-lg mx-auto">

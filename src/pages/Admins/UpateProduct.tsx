@@ -1,15 +1,14 @@
 import axios from 'axios';
-import { object } from 'joi';
 import React, { useEffect, useState } from 'react'
-import { Navigate, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { CategoryType } from '~/types/Cart';
 import { ErrorFormProduct } from '~/types/ErrorForm';
 import { FormProduct } from '~/types/FormProduct'
 import productValidate from '~/validations/products';
 
-type Props = {}
 
-const UpateProduct = (props: Props) => {
+
+const UpateProduct = () => {
     const { id } = useParams()
     const navigate = useNavigate()
     const [category , setCategory] = useState<CategoryType[]>()
