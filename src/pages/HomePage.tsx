@@ -1,6 +1,7 @@
 import SlideShow from '../components/View_Layout/SlideShow'
 import { NavLink } from 'react-router-dom'
 import { productsCoreType } from '~/types/Product'
+import CateProduct from './CateProduct'
 type Props = {
     products:productsCoreType[]
 }
@@ -31,9 +32,18 @@ const HomePage = ({products}:Props) => {
       </div>
       </NavLink>
       ))}
-     
-     
     </div>
+    <div className="grid md:grid-cols-2 items-center md:gap-4 gap-8 font-[sans-serif] text-[#333] max-w-5xl max-md:max-w-md mx-auto">
+  <div className="max-md:order-1 max-md:text-center">
+    <h3 className="md:text-3xl text-2xl md:leading-10">Prompt Delivery and Enjoyable Dining Experience.</h3>
+    <p className="mt-4 text-sm">Laboris qui Lorem ad tempor ut reprehenderit. Nostrud anim nulla officia ea sit deserunt. Eu eu quis anim aute Laboris qui Lorem ad tempor ut reprehenderit.</p>
+    <button type="button" className="px-6 py-2 mt-8 font-semibold rounded text-sm outline-none border-2 border-[#333] hover:bg-[#333] hover:text-white transition-all duration-300">Explore</button>
+  </div>
+  <div className="md:h-[450px]">
+    <img src="https://im.uniqlo.com/global-cms/spa/res0d5fe8756560fa629a01bb80729197f5fr.jpg" className="w-full h-full md:object-contain" />
+  </div>
+</div>
+      {/* <CateProduct/> */}
   </div>
 </div>
 

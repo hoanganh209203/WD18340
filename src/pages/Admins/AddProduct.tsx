@@ -168,7 +168,7 @@ const AddProduct = () => {
                 id="images"
                 name="images"
                 className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-vl border-gray-300 rounded-md"
-                value={addForm.images.join('\n')} // Chuyển đổi mảng thành một chuỗi, mỗi phần tử cách nhau bởi dấu xuống dòng
+                value={addForm.images?.join('\n')} // Chuyển đổi mảng thành một chuỗi, mỗi phần tử cách nhau bởi dấu xuống dòng
                 onChange={handlChange}
               ></textarea>
               {errorForm?.images && (
