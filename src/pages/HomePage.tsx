@@ -24,7 +24,7 @@ const HomePage = ({products}:Props) => {
           <img src={product.thumbnail} alt="Product 1" className="h-full w-full object-contain" />
         </div>
         <div>
-          <h3 className="text-lg font-bold text-gray-800">{product.title}</h3>
+          <h3 className="text-lg font-bold text-gray-800 truncate text-container w-48 overflow-hidden whitespace-nowrap">{product.title}</h3>
           <p className="text-gray-500 text-sm mt-2">{product.category?.name}</p>
           <h4 className="text-lg text-gray-700 font-bold mt-4">${product.price}</h4>
         </div>

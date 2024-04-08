@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {NavLink } from 'react-router-dom'
+import {Link, NavLink } from 'react-router-dom'
 import { productsCoreType } from '~/types/Product'
 import { Popconfirm } from "antd";
 import { useState } from 'react';
@@ -79,14 +79,14 @@ const ListProducts = ({products}: Props) => {
                 {item.rating}
               </td>
               <td className="px-6 py-4">
-              <NavLink to={`edit/${item._id}`}>
+              <Link to={`edit/${item._id}`}>
                   <button
                     type="button"
                     className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900"
                   >
                     Edit
                   </button>
-                </NavLink>
+                </Link>
                 <Popconfirm
                   title="Delete the task"
                   description="Are you sure to delete this task?"
