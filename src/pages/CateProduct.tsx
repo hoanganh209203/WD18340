@@ -1,8 +1,5 @@
-import React from 'react'
 
-type Props = {}
-
-const CateProduct = (props: Props) => {
+const CateProduct = () => {
   return (
     <div className="font-[sans-serif] bg-gray-100">
   <div className="p-4 mx-auto lg:max-w-7xl sm:max-w-full">

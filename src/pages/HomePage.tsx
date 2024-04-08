@@ -1,7 +1,6 @@
 import SlideShow from '../components/View_Layout/SlideShow'
 import { NavLink } from 'react-router-dom'
 import { productsCoreType } from '~/types/Product'
-import CateProduct from './CateProduct'
 type Props = {
     products:productsCoreType[]
 }
