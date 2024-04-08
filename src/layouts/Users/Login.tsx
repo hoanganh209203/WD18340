@@ -1,10 +1,6 @@
-import { joiResolver } from "@hookform/resolvers/joi";
-import Joi from "joi";
-import { useContext, useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useState } from "react";
 import { useNavigate} from "react-router-dom";
 import { onLogin } from "~/Apis/User";
-import { userType } from "~/types/User";
 
 
 
