@@ -2,9 +2,6 @@ import { useState } from "react";
 import { useNavigate} from "react-router-dom";
 import { onLogin } from "~/Apis/User";
 
-
-
-
 const Login = () => {
   const [email,setEmail] = useState<string>('')
   const [password,setPassword] = useState<string>('')
