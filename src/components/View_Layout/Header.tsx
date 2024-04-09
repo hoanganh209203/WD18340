@@ -1,25 +1,24 @@
-import { NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { RiAdminFill } from "react-icons/ri";
-import { useEffect, useState } from "react";
 const Header = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  useEffect(() => {
-    // Kiểm tra xem có user session hay không
-    const userSession = sessionStorage.getItem('token');
-    if (userSession) {
-      setIsLoggedIn(true); // Nếu có session, đặt isLoggedIn thành true
-    }
-  }, [isLoggedIn]);
-  console.log(isLoggedIn);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // useEffect(() => {
+  //   // Kiểm tra xem có user session hay không
+  //   const userSession = sessionStorage.getItem('token');
+  //   if (userSession) {
+  //     setIsLoggedIn(true); // Nếu có session, đặt isLoggedIn thành true
+  //   }
+  // }, [isLoggedIn]);
+  // console.log(isLoggedIn);
 
-  const handleLogout = () => {
-    // Xóa token khỏi session storage
-    sessionStorage.removeItem('token');
-    // Đặt lại trạng thái đăng nhập thành false
-    setIsLoggedIn(false);
-    // Chuyển hướng người dùng đến trang đăng nhập (hoặc trang khác tùy vào yêu cầu của bạn)
-   
-  };
+  // const handleLogout = () => {
+  //   // Xóa token khỏi session storage
+  //   sessionStorage.removeItem('token');
+  //   // Đặt lại trạng thái đăng nhập thành false
+  //   setIsLoggedIn(false);
+  //   // Chuyển hướng người dùng đến trang đăng nhập (hoặc trang khác tùy vào yêu cầu của bạn)
+
+  // };
 
   return (
     <>
@@ -43,25 +42,14 @@ const Header = () => {
                 <NavLink to="/about" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</NavLink>
               </li>
 
-              {isLoggedIn ? (
-                <>
-                  <li>
-                    <span>Welcome,</span>
-                  </li>
-                  <li>
-                    <button onClick={handleLogout} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Logout</button>
-                  </li>
-                </>
-              ) : (
-                <>
-                  <li>
-                    <NavLink to="/login" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Login</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/register" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Register</NavLink>
-                  </li>
-                </>
-              )}
+
+              <li>
+                <NavLink to="/login" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Login</NavLink>
+              </li>
+              <li>
+                <NavLink to="/register" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Register</NavLink>
+              </li>
+
 
               <li>
                 <NavLink to="/admin" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"><RiAdminFill /></NavLink>

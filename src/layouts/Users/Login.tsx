@@ -11,7 +11,7 @@ const Login = () => {
     e.preventDefault()
     try {
       const user = await onLogin({email, password});
-      // console.log(user);
+      console.log(user);
       
       if (user?.name==="AxiosError"){
         alert(user.response.data)
